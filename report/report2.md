@@ -90,14 +90,14 @@ It follows the same logic as the one from the FA class.
 TLDR: It iterates through each production, updating the value of `type` integer variable according to new assumptions.
 First, the production is split to left side and right side strings.
 Then, it's being checked on following rules:
-	*If left side is bigger than one character and the right side is empty, assumed type is 0.
-	*Otherwise, assumed type is 1, and if it's lower than the current type, it's updated.
-	*If there are no nonterminals on the right side, assumed type is 3.
-	*If there's more than one nonterminal on the right side, assumed type is 2.
-	*If there's only one nonterminal, and it's on the very left side of the right side, with no other characters following, assumed type is 2.
-	*Otherwise, it checks whether it's a left side grammar or right side grammar.
-	*If there will be contradictions in the grammar(one productions are left side and others are right side), assumed type is 2.
-	*Otherwise, type will be 3. 
+If left side is bigger than one character and the right side is empty, assumed type is 0.
+Otherwise, assumed type is 1, and if it's lower than the current type, it's updated.
+If there are no nonterminals on the right side, assumed type is 3.
+If there's more than one nonterminal on the right side, assumed type is 2.
+If there's only one nonterminal, and it's on the very left side of the right side, with no other characters following, assumed type is 2.
+Otherwise, it checks whether it's a left side grammar or right side grammar.
+If there will be contradictions in the grammar(one productions are left side and others are right side), assumed type is 2.
+Otherwise, type will be 3. 
 ```cpp
 void classification()
 	{
